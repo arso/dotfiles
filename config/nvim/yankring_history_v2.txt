@@ -1,0 +1,100 @@
+slf4j,v
+- Fix bogus date in changelog,V
+- Fix expired SSL certificates validation on connect- Fix bogus date in changelog- Drop slf4j depedency,v
+[vdsm-jsonrpc-java]baseurl = https://github.com/oVirt/name = VDSM JSON-RPC Javaprevious = v1.6.0current = v1.7.1,V
+Reminder: Poland - Associates IT Equipment Return,v
+cbs tag virt9s-ovirt-45-testing vdsm-jsonrpc-java-1.7.2-1.el9,v
+${SUFFIX:+ -D "release_suffix ${SUFFIX}"} \,v
+SUFFIX,v
+SUFFIX=".$(date -u +%Y%m%d%H%M%S).git$(git rev-parse --short HEAD)",v
+,V
+*,V
+https://bugzilla.redhat.com/show_bug.cgi?id=2101474,v
+245d24b7dba440a51710ecefdfebb1eae2b9faca,v
+https://download.copr.fedorainfracloud.org/results/ovirt/ovirt-master-snapshot/centos-stream-8-x86_64/04684468-ovirt-engine-keycloak/ovirt-engine-keycloak-15.0.2-4.el8.src.rpm,v
+ ,v
+c,v
+i,v
+p,v
+e,v
+h,v
+t,v
+.,v
+20220713104245,v
+alias reb='git fetch -v origin master && git rebase origin/master',V
+Bug-Url: https://bugzilla.redhat.com/??????,V
+With multiple paragraphs if necessary.,V
+2090645,v
+>,v
+o,v
+crooked,v
+ClientConnectionException,v
+    private static final List<Certificate> EMPTY_PEER_CERTIFICATES = new,V
+b936c4d8fe9ac50d03525b64075f9fa02eefe2af,v
+https://github.com/oVirt/ovirt-engine-keycloak/pull/45,v
+: - https://gerrit.ovirt.org/q/owner:asocha%2540redhat.com+after:{{ pierwszy_dzień_miesiąca }}+before:{{ ostatni_dzień_miesiąca }},V
+Bug-Url: https://bugzilla.redhat.com/2060792,V
+1979500,v
+2060792,v
+OVESETUP_CONFIG/keycloakEnable,v
+https://github.com/oVirt/ovirt-engine-keycloak/pull/41,v
+git tag -a v1.5.0 -m "v1.5.0"; git push --ta,v
+Fix keycloak activation/checking,v
+m,v
+ ovirt-engine-grafana-proxy.conf,v
+ogdwhcons.Stages.GRAFANA_CONFIG,v
+engine-setup --offline  --otopi-environment="OVESETUP_CONFIG/keycloakEnable=bool:True",v
+--otopi-environment="OVESETUP_CONFIG/keycloakEnable=bool:True",v
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-compose-plugin,v
+        if (self.environment[okkcons.CoreEnv.ENABLE] is True and                self.environment[okkcons.DBEnv.NEW_DATABASE] is True):            self.environment[ogdwhcons.KeycloakEnv.KEYCLOAK_ENABLED] = True        else:            self.environment[ogdwhcons.KeycloakEnv.KEYCLOAK_ENABLED] = False,V
+engine-setup --offline  --otopi-environment="OVESETUP_KEYCLOAK_CONFIG/adminPassword=str:123456 OVESETUP_KEYCLOAK_CORE/enable=bool:True OVESETUP_KEYCLOAK_DB/newDatabase=bool:True",V
+https://github.com/oVirt/ovirt-engine/pull/251,v
+See [CVE-2022-24765](https://github.blog/2022-04-12-git-security-vulnerability-announced/),v
+20220504081913,v
+",v
+patusia21,v
+[remote "upstream"]        url = https://github.com/oVirt/ovirt-engine-keycloak.git        fetch = +refs/heads/*:refs/remotes/upstream/*        gh-resolved = base,v
+',v
+r,v
+s,v
+a,v
+-,v
+u,v
+b,v
+=,v
+!,v
+d,v
+n,v
+https://github.com/oVirt/ovirt-engine/pull/295,v
+ovirt-admin-user-name,v
+Longer description using lines' length under 72 chars.,V
+3,v
+2,v
+1,v
+OVESETUP_KEYCLOAK_CONFIG/ovirtAdminUser=str:admin@ovirtOVESETUP_KEYCLOAK_CONFIG/ovirtAdminUserWithProfile123=str:admin@ovirt@internalsso,v
+dnf copr enable -y ovirt/ovirt-master-snapshot centos-stream-8        dnf install -y ovirt-release-master,v
+POSTGRES_PROVISIONING_ENABLED,v
+/tmp/tmp5u7jfbwx/kcadm.config,v
+environment,v
+# This is the 1st commit message:,V
+# This is a combination of 4 commits.,V
+Signed-off-by: Artur Socha <asocha@redhat.com>,V
+via env variable to create ovirt sso client with kcadm.sh,V
+This patch adds a wrapper script that allows to pass client secret,V
+Wrapper script for keycloak kcadm client create,V
+# This is the commit message #4:,V
+for authentication with kcadm.sh,V
+This patch adds a wrapper script that allows to pass a password via env variable,V
+Wrapper script for keycloak kcadm login,V
+# This is the commit message #3:,V
+Wrapper script for keycloak admin creationThis patch adds a wrapper script that allows to pass a passwordvia env variable for newly created boostrap admin user (for keycloak master realm).This approach makes a setup process more secure because plain text passwordscannot be seen in 'ps' output.,V
+pick 567052b Wrapper script to securely pass credentials,V
+k,v
+https://download.copr.fedorainfracloud.org/results/ovirt/ovirt-master-snapshot/centos-stream-8-x86_64/ https://download.copr.fedorainfracloud.org/results/ovirt/ovirt-master-snapshot/centos-stream-8-x86_64/,V
+http://mirror.karneval.cz/pub/centos/8-stream/AppStream/x86_64/os/ https://github.com/oVirt/ovirt-engine-keycloak/pull/26 https://github.com/oVirt/ovirt-engine/pull/295 https://download.copr.fedorainfracloud.org/results/ovirt/ovirt-master-snapshot/centos-stream-8-x86_64/ ,v
+https://github.com/oVirt/ovirt-engine-keycloak/pull/26#issuecomment-1106068261,v
+PGPASSFILE,v
+--otopi-environment="OVESETUP_KEYCLOAK_CONFIG/configDelaySeconds=str:5",v
+EXTERNAL_OIDC_CLIENT_SECRET,v
+engine_username,v
+[root@dev2 ~]# cat ~/answer_nokk.conf | grep KEYCLOAKQUESTION/1/OVESETUP_KEYCLOAK_ENABLE=str:noQUESTION/2/OVESETUP_KEYCLOAK_ENABLE=str:no,V

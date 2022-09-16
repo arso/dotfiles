@@ -1,0 +1,60 @@
+alias ng="cd $HOME/work/code/ovirt-engine"
+alias jsonrpc="cd $HOME/work/code/vdsm-jsonrpc-java"
+alias ngk="cd $HOME/work/code/github.com/arso/ovirt-engine-keycloak-fork"
+alias ost="cd $HOME/work/code/github.com/arso/ovirt-system-tests"
+export OVIRT_ENGINE_WORKDIR="${HOME}/work/bin"
+export OVIRT_ENGINE_PREFIX="${OVIRT_ENGINE_WORKDIR}/ovirt-engine-master"
+alias ngbin="cd $OVIRT_ENGINE_PREFIX"
+
+alias build_bll='time make install-dev BUILD_UT=0 PREFIX="${OVIRT_ENGINE_PREFIX}" BUILD_GWT=0 DEV_BUILD_SCL_POSTGRESQL=1 EXTRA_BUILD_FLAGS="-pl org.ovirt.engine.core:bll,org.ovirt.engine:engine-server-ear -amd -T 1C"'
+alias build_test_bll='time make install-dev BUILD_UT=1 PREFIX="${OVIRT_ENGINE_PREFIX}" BUILD_GWT=0 DEV_BUILD_SCL_POSTGRESQL=1 EXTRA_BUILD_FLAGS="-pl org.ovirt.engine.core:bll,org.ovirt.engine:engine-server-ear -amd -T 1C"'
+alias build_test_noinstall_bll='make all-dev BUILD_UT=1 PREFIX="${OVIRT_ENGINE_PREFIX}" BUILD_GWT=0 DEV_BUILD_SCL_POSTGRESQL=1 EXTRA_BUILD_FLAGS="-pl org.ovirt.engine.core:bll,org.ovirt.engine:engine-server-ear -amd -T 1C"'
+alias build_gwt='time make install-dev PREFIX="${OVIRT_ENGINE_PREFIX}" DEV_EXTRA_BUILD_FLAGS_GWT_DEFAULTS="-Dgwt.style=pretty -Dgwt.cssResourceStyle=pretty -Dgwt.locale=en_US -Dgwt.userAgent=safari" BUILD_UT=0 DEV_EXTRA_BUILD_FLAGS="-Dgwt.compiler.localWorkers=12 -amd -T 1C" DEV_BUILD_SCL_POSTGRESQL=1' SKIP_CHECKS=1
+alias build_gwt_super_dev='time make gwt-debug DEV_BUILD_GWT_SUPER_DEV_MODE=1'
+alias build_bll_435z='make install-dev BUILD_UT=0 PREFIX=${OVIRT_ENGINE_WORKDIR}/ovirt-engine-435z/ BUILD_GWT=0 DEV_BUILD_SCL_POSTGRESQL=1 EXTRA_BUILD_FLAGS="-pl org.ovirt.engine.core:bll,org.ovirt.engine:engine-server-ear -amd"'
+alias build_vdsbroker='time make install-dev BUILD_UT=0 PREFIX=$"{OVIRT_ENGINE_PREFIX}" BUILD_GWT=0 EXTRA_BUILD_FLAGS="-pl org.ovirt.engine.core:vdsbroker,org.ovirt.engine:engine-server-ear -amd -T 1C"'
+
+alias build_restapi='time make install-dev BUILD_UT=0 PREFIX="${OVIRT_ENGINE_PREFIX}" BUILD_GWT=0 EXTRA_BUILD_FLAGS="-pl org.ovirt.engine.api:restapi-parent,org.ovirt.engine:engine-server-ear -amd"'
+
+alias build_clean_engine='time make clean install-dev PREFIX="${OVIRT_ENGINE_PREFIX}" SKIP_CHECKS=1 DEV_BUILD_SCL_POSTGRESQL=1 BUILD_UT=0 EXTRA_BUILD_FLAGS="-T 1C"' 
+alias build_clean_engine_1T='time make clean install-dev PREFIX="${OVIRT_ENGINE_PREFIX}" SKIP_CHECKS=1 DEV_BUILD_SCL_POSTGRESQL=1 BUILD_UT=0' 
+alias build_clean_test_engine='time make clean install-dev PREFIX="${OVIRT_ENGINE_PREFIX}" SKIP_CHECKS=0 DEV_BUILD_SCL_POSTGRESQL=1 BUILD_UT=1 EXTRA_BUILD_FLAGS="-T 1C -nsu" ' 
+alias build_clean_test_engine_1T='time make clean install-dev PREFIX="${OVIRT_ENGINE_PREFIX}" SKIP_CHECKS=0 DEV_BUILD_SCL_POSTGRESQL=1 BUILD_UT=1 ' 
+alias build_all_noinstall_engine='time make clean all-dev PREFIX="${OVIRT_ENGINE_PREFIX}" SKIP_CHECKS=0 DEV_BUILD_SCL_POSTGRESQL=1 BUILD_UT=1 EXTRA_BUILD_FLAGS="-T 1C"' 
+
+# build all but frontend
+alias build_backend='time make install-dev BUILD_UT=0 PREFIX="${OVIRT_ENGINE_PREFIX}" BUILD_GWT=0 DEV_BUILD_SCL_POSTGRESQL=1 EXTRA_BUILD_FLAGS="-pl !org.ovirt.engine.ui:frontend-all -amd -T1C"'
+alias build_test_backend='time make install-dev BUILD_UT=1 PREFIX="${OVIRT_ENGINE_PREFIX}" BUILD_GWT=0 DEV_BUILD_SCL_POSTGRESQL=1 EXTRA_BUILD_FLAGS="-pl !org.ovirt.engine.ui:frontend-all -amd -T1C"'
+alias build_test_noinstall_backend='time make all-dev BUILD_UT=1 PREFIX="${OVIRT_ENGINE_PREFIX}" BUILD_GWT=0 DEV_BUILD_SCL_POSTGRESQL=1 EXTRA_BUILD_FLAGS="-pl !org.ovirt.engine.ui:frontend-all -amd -T1C"'
+
+# build install all
+alias build_engine='time make install-dev PREFIX="${OVIRT_ENGINE_PREFIX}" SKIP_CHECKS=1 EXTRA_BUILD_FLAGS="-T 1C"'
+alias start_ng_master='"${OVIRT_ENGINE_PREFIX}"/share/ovirt-engine/services/ovirt-engine/ovirt-engine.py start'
+
+# ovirt-engine-4.3.5
+alias build_engine_435z='time make install-dev PREFIX="${OVIRT_ENGINE_WORKDIR}/ovirt-engine-435z" SKIP_CHECKS=1'
+alias build_clean_engine_435z='time make clean install-dev PREFIX="${OVIRT_ENGINE_WORKDIR}/ovirt-engine-435z" SKIP_CHECKS=1'
+alias start_ng_435z='"${OVIRT_ENGINE_WORKDIR}"/ovirt-engine-435z/share/ovirt-engine/services/ovirt-engine/ovirt-engine.py start'
+
+# ovirt-engine-4.3
+alias build_engine_43='time make install-dev PREFIX="${OVIRT_ENGINE_WORKDIR}/ovirt-engine-43" SKIP_CHECKS=1'
+alias build_clean_engine_43='time make clean install-dev PREFIX="${OVIRT_ENGINE_WORKDIR}/ovirt-engine-43" SKIP_CHECKS=1'
+alias start_ng_43='"${OVIRT_ENGINE_WORKDIR}"/ovirt-engine-43/share/ovirt-engine/services/ovirt-engine/ovirt-engine.py start'
+
+alias enginedb='sudo su - postgres -c "psql -d engine_dev" '
+
+
+alias lece='systemctl suspend'
+alias kf='kinit -f'
+alias tm='tmux a -t engine || tmux new -s engine'
+alias docker='docker'
+alias build_clean_keycloak='rm -rf exported-artifacts rpmbuild output  ovirt-engine-keycloak.spec ; automation/build-artifacts.sh'
+
+alias tunnelopenshift='sudo ssh -fNTM -L 443:192.168.130.11:443 root@workstation.dom'
+alias rswork='rsync -a --stats --exclude "target" --exclude "output" --delete workstation.dom:${PWD}/ .'
+
+
+export KUBECONFIG="$HOME/.kube/integrationdemoconfig"
+alias ockubeadmin='oc login -u kubeadmin -p AwXP5-LxyjR-IrCN8-EHjr6; oc project openshift-cnv'
+alias rebgh='git fetch -v upstream master && git rebase upstream/master'
+

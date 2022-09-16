@@ -1,0 +1,53 @@
+alias lt='ls --human-readable --size -1 -S --classify'
+alias d='df -h'
+alias st='git status'
+alias ci="git commit"
+alias co="git checkout"
+alias ga="git add"
+alias lola="git lola"
+alias aa="git add -A"
+alias cia="git cia"
+alias ciae="git ciae"
+alias upreb="git fetch -v upstream master && git rebase upstream/master"
+alias upreset="git fetch -v upstream master && git reset --hard upstream/master"
+alias mci='mvn clean install'
+alias mct='mvn clean test'
+alias mcc='mvn clean compile'
+alias ducks='du -cks * | sort -rn | head'
+alias vim='vim'
+alias ve='python3 -m venv ./venv'
+alias va='source ./venv/bin/activate'
+
+alias show_eclipse_files='find . \( -name .classpath -o -name .project -o -name .settings \)'
+alias show_intellij_files='find . \( -name .ipr -o -name .iml -o -name .idea \)'
+alias delete_eclipse_files='find . \( -name .classpath -o -name .project -o -name .settings \) -exec rm -rf {} \;'
+
+export ANT_HOME="/home/asocha/opt/ant"
+export MAVEN_HOME="/home/asocha/opt/maven"
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
+#export PATH="$PATH:$JAVA_HOME/bin"
+export PATH="$MAVEN_HOME/bin:/home/asocha/.local/bin:$ANT_HOME/bin:$PATH"
+export EDITOR='nvim'
+export GOPATH=$HOME/go
+export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$PATH:/home/asocha/opt/visualvm/bin"
+source $HOME/.cargo/env
+export MYCODE="$HOME/work/localcode"
+
+alias grep='grep --color=always'
+
+alias http='/home/asocha/opt/httpie/bin/http'
+alias sy='sudo dnf '
+alias syy='sudo dnf -y'
+alias syyi='sudo dnf -y install'
+alias sus='systemctl suspend'
+alias hib='systemctl hibernate'
+alias off='sudo shutdown +0'
+alias vmstart='sudo virsh start'
+alias vmstop='sudo virsh shutdown'
+alias vmoff='sudo virsh destroy'
+alias vmlist='sudo virsh list --all'
+alias rs='rsync -a --progress=info2'
+alias arso='cd $MYCODE/github.com/arso/'
+alias ircayc='cd $MYCODE/github.com/arso/ircayc'
+alias wakeworkstation='sudo ether-wake 30:9c:23:f6:7d:cf'

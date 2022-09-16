@@ -1,0 +1,33 @@
+[user]
+	name = Artur Socha
+	email = asocha@redhat.com
+	signingkey = 06197C1F2C7A818E
+[core]
+	editor = nvim
+[alias]
+    co = checkout
+	br = branch
+    ci = commit
+    cia = commit --amend --no-edit
+    ciae = commit --amend
+    aa = add -A
+	st = status
+	ll = log --pretty=oneline --abbrev-commit
+	lg = log --pretty=oneline --abbrev-commit --graph --decorate --date=relative
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    unstage = reset HEAD --
+[filesystem "Eclipse OpenJ9|1.8.0_222|/dev/mapper/fedora-home"]
+	timestampResolution = 1001 microseconds
+	minRacyThreshold = 0 nanoseconds
+[commit]
+	gpgsign = true
+[filesystem "Red Hat, Inc.|11.0.9|/dev/mapper/fedora_localhost--live-home"]
+	timestampResolution = 11000 nanoseconds
+	minRacyThreshold = 1390 microseconds
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
